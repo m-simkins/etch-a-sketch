@@ -3,12 +3,32 @@
     --dark-grey: #666;
     --light-grey: #999;
     --white: #ccc;
+    --box-size: 50px;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
-    border: 1px solid var(--black);
     padding: 0;
     font-size: 1rem;
+    border: 1px solid black;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    height: 100%;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vh;
+    aspect-ratio: 1;
+    margin: 10vh auto;
+    gap: 0;
+}
+
+.grid-square {
+    aspect-ratio: 1;
 }
