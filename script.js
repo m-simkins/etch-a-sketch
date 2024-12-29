@@ -9,7 +9,6 @@ document.body.appendChild(gridContainer);
 
 createGridButton.addEventListener("click", () => {
     const gridSize = Number(prompt("set grid size"));
-    console.log(gridSize);
     if (isNaN(gridSize) || gridSize < 1) {
         alert("invalid")
     } else {
@@ -29,7 +28,14 @@ function createGrid(gridSize) {
             gridCell.classList.add("grid-cell");
             gridColumn.appendChild(gridCell);
             gridCell.addEventListener("mouseenter", () => {
-                gridCell.style.backgroundColor = "#999";
+
+                gridCell.style.backgroundColor = `rgb(${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)})`;
+                let opacity = Number(gridCell.style.opacity.valueOf())
+                
+                if (opacity < 1) {
+                    opacity += 0.1;
+                    gridCell.style.opacity = `${opacity}`;
+                }
             })
         }
     }
